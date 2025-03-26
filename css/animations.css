@@ -1,0 +1,596 @@
+/* Base Styles */
+:root {
+    --primary-color: #d4b08c; /* Elegant gold */
+    --secondary-color: #545454; /* Soft charcoal */
+    --accent-color: #f9f1e7; /* Cream */
+    --text-color: #333333;
+    --light-text: #ffffff;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Georgia', serif;
+    color: var(--text-color);
+    line-height: 1.8;
+    background-color: var(--accent-color);
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Elegant Font', 'Playfair Display', serif;
+    letter-spacing: 1px;
+    color: var(--secondary-color);
+  }
+  
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  a:hover {
+    color: var(--secondary-color);
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  /* Header & Footer */
+  header, footer {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 120px 0;
+    color: var(--light-text);
+    text-align: center;
+  }
+  
+  header::before, footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+  
+  header *, footer * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .couple-names {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px;
+  }
+  
+  .wedding-date {
+    font-size: 1.5rem;
+    font-family: 'Handwriting Font', cursive;
+    letter-spacing: 2px;
+  }
+  
+  footer {
+    padding: 60px 0;
+  }
+  
+  footer p {
+    font-size: 1.2rem;
+  }
+  
+  /* Sections */
+  section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+  
+  section.gallery {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  
+  section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    position: relative;
+    font-size: 2.2rem;
+  }
+  
+  /* Event Details */
+  .event-details {
+    text-align: center;
+  }
+  
+  .event-details p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+  }
+  
+  /* RSVP Form */
+  .rsvp {
+    text-align: center;
+  }
+  
+  #rsvp-form {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--accent-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--secondary-color);
+  }
+  
+  input[type="text"], 
+  input[type="email"], 
+  select, 
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+  
+  input:focus, 
+  select:focus, 
+  textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(212, 176, 140, 0.5);
+  }
+  
+  .radio-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+  }
+  
+  .radio-group input[type="radio"] {
+    margin-right: 8px;
+  }
+  
+  .submit-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: block;
+    margin: 20px auto 0;
+  }
+  
+  .submit-btn:hover {
+    background-color: #c29e7a;
+    transform: translateY(-2px);
+  }
+  
+  /* Map & Directions */
+  .map-container {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .directions-info {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .direction-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    margin-top: 15px;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .direction-btn:hover {
+    background-color: #c29e7a;
+    transform: translateY(-2px);
+    color: white;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .couple-names {
+      font-size: 2.5rem;
+    }
+    
+    section {
+      padding: 60px 15px;
+    }
+    
+    .radio-group {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .couple-names {
+      font-size: 2rem;
+    }
+    
+    .wedding-date {
+      font-size: 1.2rem;
+    }
+    
+    section h2 {
+      font-size: 1.8rem;
+    }
+    
+    footer p {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes heartbeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.3); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.3); }
+    70% { transform: scale(1); }
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(176, 141, 87, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(176, 141, 87, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(176, 141, 87, 0); }
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: -100% 0; }
+    100% { background-position: 200% 0; }
+  }
+  
+  /* Animation Classes */
+  .fade-in {
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  .fade-in-up {
+    animation: fadeInUp 1s ease forwards;
+  }
+  
+  .fade-in-down {
+    animation: fadeInDown 1s ease forwards;
+  }
+  
+  .fade-in-left {
+    animation: fadeInLeft 1s ease forwards;
+  }
+  
+  .fade-in-right {
+    animation: fadeInRight 1s ease forwards;
+  }
+  
+  /* Applied Animations */
+  .header-content {
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards 0.5s;
+  }
+  
+  .bismillah {
+    opacity: 0;
+    animation: fadeInDown 1s ease forwards;
+  }
+  
+  .bride-groom {
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards 0.8s;
+  }
+  
+  .couple-names {
+    opacity: 0;
+    animation: fadeInUp 1.5s ease forwards 1.2s;
+  }
+  
+  .wedding-date {
+    opacity: 0;
+    animation: fadeInUp 1.5s ease forwards 1.5s;
+  }
+  
+  .heart-divider {
+    animation: heartbeat 1.5s infinite;
+  }
+  
+  .event-card {
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .event-icon {
+    transition: all 0.3s ease;
+  }
+  
+  .event-card:hover .event-icon {
+    transform: scale(1.2) rotate(10deg);
+    color: var(--dark-accent);
+  }
+  
+  .countdown-box {
+    animation: fadeIn 0.5s ease forwards;
+    animation-delay: calc(var(--i) * 0.2s);
+    opacity: 0;
+  }
+  
+  .countdown-box:nth-child(1) { --i: 1; }
+  .countdown-box:nth-child(2) { --i: 2; }
+  .countdown-box:nth-child(3) { --i: 3; }
+  .countdown-box:nth-child(4) { --i: 4; }
+  
+  .submit-btn {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .submit-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(112, 66, 20, 0.4);
+  }
+  
+  .copy-btn {
+    transition: all 0.3s ease;
+  }
+  
+  .copy-btn.copied {
+    background-color: var(--success-color);
+  }
+  
+  .timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .gallery-item.revealed {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Form Animations */
+  .form-group.focused label {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
+  }
+  
+  .form-group.focused input,
+  .form-group.focused select,
+  .form-group.focused textarea {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(176, 141, 87, 0.3);
+  }
+  
+  .form-group.input-focused label {
+    color: var(--primary-color);
+  }
+  
+  /* Decoration Elements */
+  .floral-divider {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  /* Music control animation */
+  #music-toggle {
+    animation: pulse 2s infinite;
+  }
+  
+  #music-toggle:hover {
+    animation: none;
+  }
+  
+  /* Loading Animation for RSVP Form */
+  #rsvp-form.sending .submit-btn {
+    position: relative;
+    pointer-events: none;
+    background-color: var(--secondary-color);
+  }
+  
+  #rsvp-form.sending .submit-btn::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid white;
+    border-radius: 50%;
+    right: 10px;
+    top: calc(50% - 10px);
+    animation: spin 1s linear infinite;
+  }
+  
+  /* Shimmer effect for gift cards */
+  .gift-card:hover .account-number {
+    background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.8) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+    color: var(--primary-color);
+  }
+  
+  /* Protocol items hover animation */
+  .protocol-item {
+    transition: all 0.3s ease;
+  }
+  
+  .protocol-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .protocol-icon {
+    transition: all 0.3s ease;
+  }
+  
+  .protocol-item:hover .protocol-icon {
+    transform: translateY(-5px);
+    color: var(--dark-accent);
+  }
+  
+  /* Opening Animation Enhancement */
+  .opening-animation .envelope {
+    animation: fadeInUp 1s ease forwards, float 3s ease-in-out infinite 1s;
+  }
+  
+  .envelope-message h1 {
+    opacity: 0;
+    animation: fadeInDown 1s ease forwards 0.5s;
+  }
+  
+  .envelope-message h2 {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.8s;
+  }
+  
+  .envelope-message .divider-ornament {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1s;
+  }
+  
+  .envelope-message p {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1.2s;
+  }
+  
+  .envelope-message .guest-name {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1.4s;
+  }
+  
+  .open-btn {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards 1.6s;
+  }
+  
+  /* Quote section animation */
+  .quote {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .quote-source {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 2s;
+  }
+  
+  /* Media Queries for Responsive Animations */
+  @media (max-width: 768px) {
+    .bride-groom {
+      animation-delay: 0.5s;
+    }
+    
+    .couple-names {
+      animation-delay: 0.8s;
+    }
+    
+    .wedding-date {
+      animation-delay: 1s;
+    }
+  }
